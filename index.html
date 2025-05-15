@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="kimPTmu7A4vKw2sg8AEcmmFLJeLFJjmK0qV42cYY" />
+    <title>Ecommerce</title>
+
+    <link rel="shortcut icon" href="" type="image/gif">
+
+    <meta name="csrf-token" content="kimPTmu7A4vKw2sg8AEcmmFLJeLFJjmK0qV42cYY" />
+    <link rel="icon" href="https://ecom1.webskart.net/public/uploads/site/favicon6692899.png" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/bootstrap.minn.css" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/slick.css" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/slick-theme.css" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/magnific-popup.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/responsive.css" />
+    <link rel="stylesheet" href="https://ecom1.webskart.net/public/frontend/css/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://ecom1.webskart.net/public/frontend/css/jquery.exzoom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+
+    <style>
+        .user-dropdown {
+            position: absolute;
+            background: #fff;
+            z-index: 99;
+            box-shadow: 0 2px 12px #d3d3d380 !important;
+            width: 9rem;
+            opacity: 0;
+            top: 32px;
+            visibility: hidden;
+            left: -28px;
+            transition: all 0.2s ease;
+        }
+
+        .user-drop:hover .user-dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .user-dropdown li {
+            padding: 6px 12px;
+            transition: all 0.3s ease;
+        }
+
+        .user-dropdown li:not(:last-child) {
+            border-bottom: 1px solid #efefef;
+        }
+
+        .user-dropdown li:hover {
+            transform: translateX(3px);
+        }
+
+        ul.user-dropdown li a {
+            color: #000;
+            font-size: 12px;
+        }
+
+        .flas_item {
+            margin-bottom: 30px;
+        }
+         .sale-banner {
+            background: linear-gradient(135deg, #ff4e50, #f9d423);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            color: white;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .sale-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sale-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .countdown-container {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            margin: 0 10px 10px;
+            min-width: 80px;
+            padding: 15px 10px;
+        }
+        
+        .countdown-value {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        
+        .cta-button {
+            background-color: white;
+            border: none;
+            border-radius: 50px;
+            color: #ff4e50;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 15px 40px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            background-color: #f9f9f9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .products-preview {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            width: 180px;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-image {
+            background: #eee;
+            height: 120px;
+            width: 100%;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-title {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .original-price {
+            color: #999;
+            font-size: 0.8rem;
+            text-decoration: line-through;
+        }
+        
+        .sale-price {
+            color: #ff4e50;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .sale-title {
+                font-size: 1.8rem;
+            }
+            
+            .sale-subtitle {
+                font-size: 1rem;
+            }
+            
+            .countdown-box {
+                min-width: 70px;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+        }
+        .countdown-box {
+    background-color: rgb(233 96 36);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    margin: 0 10px 10px;
+    min-width: 80px;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+
+
+
+
+    <nav class="">
+        <div class="topMenuSearch">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-lg-3 col-12 order-lg-1 order-1 d-flex">
+                        <div class="logo_block">
+                            <a href="">
+                                <img src="https://ecom1.webskart.net/public/frontend/img/Zoo.png" class="img-fluid"
+                                    style="height:50px; object-fit:contain" alt="" /></a>
+                            <div class="menu-btn d-lg-none d-block">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <!-- mobile search start  -->
+                        <div class="container search_mobile">
+                            <div class="search-toggle">
+                                <button class="search-icon icon-search">
+                                    <i class="fa fa-fw fa-search"></i>
+                                </button>
+                                <button class="search-icon icon-close">
+                                    <i class="fa fa-fw fa-close"></i>
+                                </button>
+                            </div>
+                            <div class="search-container">
+                                <form class="d-flex">
+                                    <input type="text" name="q" id="search-terms" placeholder="Search terms..." />
+                                    <button type="submit" name="submit" value="Go" class="search-icon">
+                                        <i class="fa fa-fw fa-search"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- mobile search end  -->
+                    </div>
+                    <div class="col-lg-6 col-12 order-lg-2 order-3">
+                        <form action="https://ecom1.webskart.net/search" method="post">
+                            <input type="hidden" name="_token" value="kimPTmu7A4vKw2sg8AEcmmFLJeLFJjmK0qV42cYY">
+                            <div class="search_wrapp d-flex">
+                                <div class="wrapper w-100 position-relative">
+                                    <div class="search-input position-relative">
+
+                                        <input type="text" id="tbCountries" placeholder="Search Product"
+                                            name="search" />
+                                        <button type="submit" class="icon">
+                                            <img src="https://ecom1.webskart.net/public/frontend/img/search.png"
+                                                class="img-fluid" alt="" />
+                                            <input type="hidden" id="allProducts"
+                                                value="[{&quot;product_name&quot;:&quot;Polarized Matt Black Best Quality And Best Selling Trending Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-best-quality-and-best-selling-trending-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-best-quality-and-best-selling-trending-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Best Quality And Best Selling Trending 111 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-best-quality-and-best-selling-trending-111-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-best-quality-and-best-selling-trending-111-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Polarized Matt Black Sticker Best Selling And Best Quality 112 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-polarized-matt-black-sticker-best-selling-and-best-quality-112-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-polarized-matt-black-sticker-best-selling-and-best-quality-112-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades MC Stan Rectangle Matt Black Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-mc-stan-rectangle-matt-black-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-mc-stan-rectangle-matt-black-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Sliver Metal Frame Round Black 1915 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-sliver-metal-frame-round-black-1915-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-sliver-metal-frame-round-black-1915-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Golden Metal Frame Round Black 1915 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-golden-metal-frame-round-black-1915-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-golden-metal-frame-round-black-1915-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Square Black Golden Metal Frame 100 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-square-black-golden-metal-frame-100-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-square-black-golden-metal-frame-100-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades D Black Shaded Square Best Quality 302A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-d-black-shaded-square-best-quality-302a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-d-black-shaded-square-best-quality-302a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Brown Square Best Quality D15044 Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-brown-square-best-quality-d15044-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-brown-square-best-quality-d15044-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality 113 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-113-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-113-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Oversized Square Matt Black 114 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-oversized-square-matt-black-114-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-oversized-square-matt-black-114-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Cat Eye Animal Print Brown Best Quality 2A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;cat-eye-animal-print-brown-best-quality-2a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-animal-print-brown-best-quality-2a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden Frame Square Black Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-frame-square-black-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-frame-square-black-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Double Bar Black Metal Frame 2000A For Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-double-bar-black-metal-frame-2000a-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-double-bar-black-metal-frame-2000a-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Double Bar Sliver Metal Frame 2001A For Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-double-bar-sliver-metal-frame-2001a-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-double-bar-sliver-metal-frame-2001a-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Club Master Sliver Black Frame Best Selling Glass For 2004A Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-club-master-sliver-black-frame-best-selling-glass-for-2004a-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-club-master-sliver-black-frame-best-selling-glass-for-2004a-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Brown Golden Metal Frame Square 701A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-brown-golden-metal-frame-square-701a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-brown-golden-metal-frame-square-701a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;DV Matt Black Animal Print Best Quality 2A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;dv-matt-black-animal-print-best-quality-2a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/dv-matt-black-animal-print-best-quality-2a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades V Rectangle Black 304A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-v-rectangle-black-304a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-v-rectangle-black-304a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades V Pink Rectangle Best Quality 305A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-v-pink-rectangle-best-quality-305a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-v-pink-rectangle-best-quality-305a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut  Glasses Kabir Golden Metal Frame Glass For Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glasses-kabir-golden-metal-frame-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glasses-kabir-golden-metal-frame-glass-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Oversized Rimless Square Black Golden Frame 306A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-oversized-rimless-square-black-golden-frame-306a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-oversized-rimless-square-black-golden-frame-306a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Cat Eye Double B Black Best Sunglasses 307A For Women&quot;,&quot;slug&quot;:&quot;cat-eye-double-b-black-best-sunglasses-307a-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-double-b-black-best-sunglasses-307a-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Peach Square Frame Best Quality Glass For Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-peach-square-frame-best-quality-glass-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-peach-square-frame-best-quality-glass-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Black Square Frame Glass 1000A For Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-black-square-frame-glass-1000a-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-black-square-frame-glass-1000a-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Glass Gray Square Frame 1001A For Men And Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-glass-gray-square-frame-1001a-for-men-and-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-glass-gray-square-frame-1001a-for-men-and-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Cat Eye Black Frame Best Quality 308A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-cat-eye-black-frame-best-quality-308a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-cat-eye-black-frame-best-quality-308a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Square Black Best Quality 2247 Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-square-black-best-quality-2247-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-square-black-best-quality-2247-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Rimless Oval Black Frame 309A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-rimless-oval-black-frame-309a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-rimless-oval-black-frame-309a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Golden Metal Frame Square 1909 Sunglasses For Women And  Men&quot;,&quot;slug&quot;:&quot;zoo-shades-golden-metal-frame-square-1909-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-golden-metal-frame-square-1909-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Square Black Frame Best Selling 5226 Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-square-black-frame-best-selling-5226-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-square-black-frame-best-selling-5226-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Polarized Animal Print Brown Square 3A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-polarized-animal-print-brown-square-3a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-polarized-animal-print-brown-square-3a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Polarized Brown Square Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-polarized-brown-square-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-polarized-brown-square-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Cat Eye Peach Brown Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;cat-eye-peach-brown-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-peach-brown-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Peach Brown Best Quality Sunglasses For Men And Woemn&quot;,&quot;slug&quot;:&quot;zoo-shades-peach-brown-best-quality-sunglasses-for-men-and-woemn&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-peach-brown-best-quality-sunglasses-for-men-and-woemn&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality 115 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-115-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-115-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;The Gathered Drape Trench&quot;,&quot;slug&quot;:&quot;the-gathered-drape-trench&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/the-gathered-drape-trench&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black And White Frame Best Selling 117 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-and-white-frame-best-selling-117-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-and-white-frame-best-selling-117-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Square Black Frame Best Quality 310A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-square-black-frame-best-quality-310a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-square-black-frame-best-quality-310a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality 118 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-118-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-118-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Matt Black New Square 311A Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-matt-black-new-square-311a-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-matt-black-new-square-311a-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Oversized Square 119 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-oversized-square-119-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-oversized-square-119-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Rimless Square 120 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-rimless-square-120-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-rimless-square-120-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Full Black Metal Frame Square Sparing 702A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-full-black-metal-frame-square-sparing-702a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-full-black-metal-frame-square-sparing-702a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Sliver Metal Frame 7006 Glass For Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-sliver-metal-frame-7006-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-sliver-metal-frame-7006-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Golden Metal Frame 7006 Glass For Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-golden-metal-frame-7006-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-golden-metal-frame-7006-glass-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Hip Hop Golden Metal Frame  Mundra Rectangle Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-hip-hop-golden-metal-frame-mundra-rectangle-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-hip-hop-golden-metal-frame-mundra-rectangle-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Changeable Glass Aviator Black Metal Frame Glass For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-changeable-glass-aviator-black-metal-frame-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-changeable-glass-aviator-black-metal-frame-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Changeable Aviator Golden Metal Frame Glass For Men&quot;,&quot;slug&quot;:&quot;changeable-aviator-golden-metal-frame-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/changeable-aviator-golden-metal-frame-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Changeable Side Rubber Square Frame 3A Glass For Men&quot;,&quot;slug&quot;:&quot;changeable-side-rubber-square-frame-3a-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/changeable-side-rubber-square-frame-3a-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Changeable Glass Wayfarer Black Frame 4A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;changeable-glass-wayfarer-black-frame-4a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/changeable-glass-wayfarer-black-frame-4a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Changeable Glass Square Black Frame 5A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;changeable-glass-square-black-frame-5a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/changeable-glass-square-black-frame-5a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Square Black Metal Frame 703A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-square-black-metal-frame-703a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-square-black-metal-frame-703a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Round Sliver Metal Frame 704A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-round-sliver-metal-frame-704a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-round-sliver-metal-frame-704a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Golden Round Metal Frame Sprint Pong 705A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-golden-round-metal-frame-sprint-pong-705a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-golden-round-metal-frame-sprint-pong-705a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Full Black Round Spring Pong Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-full-black-round-spring-pong-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-full-black-round-spring-pong-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Changeable Glass Double Bar Black Metal Frame 706A Glass For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-changeable-glass-double-bar-black-metal-frame-706a-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-changeable-glass-double-bar-black-metal-frame-706a-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black DV Best Quality 121 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-dv-best-quality-121-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-dv-best-quality-121-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Double Bar Golden Metal Frame Sunglasses 708A For Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-double-bar-golden-metal-frame-sunglasses-708a-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-double-bar-golden-metal-frame-sunglasses-708a-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;The Gathered Drape Trench&quot;,&quot;slug&quot;:&quot;the-gathered-drape-trench&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/the-gathered-drape-trench&quot;},{&quot;product_name&quot;:&quot;Polarized Full Black Best Selling Sunglasses 123 Sunglasses For Women And Men&quot;,&quot;slug&quot;:&quot;polarized-full-black-best-selling-sunglasses-123-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-full-black-best-selling-sunglasses-123-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Polarized HB Matt Black Square Best Quality 127 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-hb-matt-black-square-best-quality-127-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-hb-matt-black-square-best-quality-127-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Sporty Cycling Matlrxs Best Quality 128 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-sporty-cycling-matlrxs-best-quality-128-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-sporty-cycling-matlrxs-best-quality-128-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Sporty Cycling Best Quality 129 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-sporty-cycling-best-quality-129-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-sporty-cycling-best-quality-129-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Oversized Square Metal Frame Black Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-oversized-square-metal-frame-black-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-oversized-square-metal-frame-black-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Sliver Metal Frame Square 708A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-sliver-metal-frame-square-708a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-sliver-metal-frame-square-708a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Full Black Metal Frame Square 709A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-full-black-metal-frame-square-709a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-full-black-metal-frame-square-709a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Golden Metal Frame Square 710A Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-golden-metal-frame-square-710a-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-golden-metal-frame-square-710a-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Cat Eye 316 Black Shaded Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-cat-eye-316-black-shaded-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-cat-eye-316-black-shaded-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Cat Eye Brown 317 Frame Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-cat-eye-brown-317-frame-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-cat-eye-brown-317-frame-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Pink Transparent Frame 318 Cat Eye Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-pink-transparent-frame-318-cat-eye-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-pink-transparent-frame-318-cat-eye-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;H Black 319 Square Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;h-black-319-square-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/h-black-319-square-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Pink 320A Transparent Square Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-pink-320a-transparent-square-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-pink-320a-transparent-square-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades H Brown 321A Square Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-h-brown-321a-square-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-h-brown-321a-square-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Full Black Metal Frame Side Cover 7006 Mode Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-full-black-metal-frame-side-cover-7006-mode-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-full-black-metal-frame-side-cover-7006-mode-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden Animal Print Square New Design Sunglasses For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-animal-print-square-new-design-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-animal-print-square-new-design-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Double 711 Bar Side Cover Full Black Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-double-711-bar-side-cover-full-black-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-double-711-bar-side-cover-full-black-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Golden Metal Frame Side Cover Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-golden-metal-frame-side-cover-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-golden-metal-frame-side-cover-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Sliver Metal Frame Side Cover Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-sliver-metal-frame-side-cover-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-sliver-metal-frame-side-cover-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Round Full Black 712A Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-round-full-black-712a-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-round-full-black-712a-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Round Sliver 713A Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-round-sliver-713a-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-round-sliver-713a-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Round Golden 714A Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-round-golden-714a-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-round-golden-714a-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Wooden Frame 709A Square Frame Glass For Women And Men&quot;,&quot;slug&quot;:&quot;blue-ray-cut-wooden-frame-709a-square-frame-glass-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-wooden-frame-709a-square-frame-glass-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades New Design Black 322A Frame  Square Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-new-design-black-322a-frame-square-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-new-design-black-322a-frame-square-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Tortoise Brown 323A Rectangle Best Quality  Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-tortoise-brown-323a-rectangle-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-tortoise-brown-323a-rectangle-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden And Peach 324A Frame Square Sunglasses For Men And Women&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-and-peach-324a-frame-square-sunglasses-for-men-and-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-and-peach-324a-frame-square-sunglasses-for-men-and-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden And Metal Frame 715A Square Black Sunglasses For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-and-metal-frame-715a-square-black-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-and-metal-frame-715a-square-black-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden And Sliver Metal 716A Frame Square New Design Sunglasses For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-and-sliver-metal-716a-frame-square-new-design-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-and-sliver-metal-716a-frame-square-new-design-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Wooden And Golden Metal 717A Frame New Design Sunglasses For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-wooden-and-golden-metal-717a-frame-new-design-sunglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-wooden-and-golden-metal-717a-frame-new-design-sunglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Polarized Matt Black 131A Square New Design Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-polarized-matt-black-131a-square-new-design-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-polarized-matt-black-131a-square-new-design-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Purple 325A Square Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-purple-325a-square-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-purple-325a-square-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Matt Black 3000A Prescription Square Best Quality Frame For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-matt-black-3000a-prescription-square-best-quality-frame-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-matt-black-3000a-prescription-square-best-quality-frame-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Shining Black 3001A Prescription Square Best Quality Frame For Women And Men&quot;,&quot;slug&quot;:&quot;zoo-shades-shining-black-3001a-prescription-square-best-quality-frame-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-shining-black-3001a-prescription-square-best-quality-frame-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Prescription Black Metal Frame 3002A Rectangle Glass For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-prescription-black-metal-frame-3002a-rectangle-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-prescription-black-metal-frame-3002a-rectangle-glass-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Prescription Golden And Brown 3003A Metal Frame Rectangle Glass For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-prescription-golden-and-brown-3003a-metal-frame-rectangle-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-prescription-golden-and-brown-3003a-metal-frame-rectangle-glass-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Prescription Brown 3004A Metal Frame Rectangle Glass For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-prescription-brown-3004a-metal-frame-rectangle-glass-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-prescription-brown-3004a-metal-frame-rectangle-glass-for-men&quot;},{&quot;product_name&quot;:&quot;Half Rim Black Metal 3005A Prescription Eyeglasses Frame For Women And Men&quot;,&quot;slug&quot;:&quot;half-rim-black-metal-3005a-prescription-eyeglasses-frame-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/half-rim-black-metal-3005a-prescription-eyeglasses-frame-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Half Rim Brown Metal 3006A Prescription Eyeglasses Frame For Women And Men&quot;,&quot;slug&quot;:&quot;half-rim-brown-metal-3006a-prescription-eyeglasses-frame-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/half-rim-brown-metal-3006a-prescription-eyeglasses-frame-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Black Frame Square 3007A Prescription Eyeglasses For Women And Men&quot;,&quot;slug&quot;:&quot;black-frame-square-3007a-prescription-eyeglasses-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/black-frame-square-3007a-prescription-eyeglasses-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Odger Chair&quot;,&quot;slug&quot;:&quot;odger-chair&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/odger-chair&quot;},{&quot;product_name&quot;:&quot;Prescription Eyeglasses Square Grey 3009A Frame For Women And Men&quot;,&quot;slug&quot;:&quot;prescription-eyeglasses-square-grey-3009a-frame-for-women-and-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/prescription-eyeglasses-square-grey-3009a-frame-for-women-and-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matlrxs Matt Black Side Red Square Sunglasses&quot;,&quot;slug&quot;:&quot;polarized-matlrxs-matt-black-side-red-square-sunglasses&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matlrxs-matt-black-side-red-square-sunglasses&quot;},{&quot;product_name&quot;:&quot;Polarized Matlrxs Single Lens Side Hole Sunglasses&quot;,&quot;slug&quot;:&quot;polarized-matlrxs-single-lens-side-hole-sunglasses&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matlrxs-single-lens-side-hole-sunglasses&quot;},{&quot;product_name&quot;:&quot;Polarized Matlrxs 2 Dot Single Lens Sunglasses&quot;,&quot;slug&quot;:&quot;polarized-matlrxs-2-dot-single-lens-sunglasses&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matlrxs-2-dot-single-lens-sunglasses&quot;},{&quot;product_name&quot;:&quot;Polarized Sporty Black Metal Frame Sunglasses&quot;,&quot;slug&quot;:&quot;polarized-sporty-black-metal-frame-sunglasses&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-sporty-black-metal-frame-sunglasses&quot;},{&quot;product_name&quot;:&quot;H Pink, Black, Brown &amp; Black Shaded Rimless Square Sunglasses For Women&quot;,&quot;slug&quot;:&quot;h-pink-black-brown-black-shaded-rimless-square-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/h-pink-black-brown-black-shaded-rimless-square-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Black, Brown &amp; Black Shaded Rimless Square Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-black-brown-black-shaded-rimless-square-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-black-brown-black-shaded-rimless-square-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Black Metal Frame Square Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-black-metal-frame-square-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-black-metal-frame-square-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Black, Grey &amp; Brown Colour Design Oversized Square Design Sunglasses For Women&quot;,&quot;slug&quot;:&quot;black-grey-brown-colour-design-oversized-square-design-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/black-grey-brown-colour-design-oversized-square-design-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Black, Peach &amp; Animal Print Rectangle Square Sunglasses For Women&quot;,&quot;slug&quot;:&quot;black-peach-animal-print-rectangle-square-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/black-peach-animal-print-rectangle-square-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Black &amp; Grey TR Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-black-grey-tr-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-black-grey-tr-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Cat Eye Square Pink, Black &amp; Blue TR Best Quality Frame Glass For Men &amp; WomenE&quot;,&quot;slug&quot;:&quot;cat-eye-square-pink-black-blue-tr-best-quality-frame-glass-for-men-womene&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-square-pink-black-blue-tr-best-quality-frame-glass-for-men-womene&quot;},{&quot;product_name&quot;:&quot;TR Frame Black &amp; Multi Colour Square Glass For Women&quot;,&quot;slug&quot;:&quot;tr-frame-black-multi-colour-square-glass-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/tr-frame-black-multi-colour-square-glass-for-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Black &amp; Grey Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-black-grey-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-black-grey-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Black Rectangle Square TR Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;black-rectangle-square-tr-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/black-rectangle-square-tr-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Metal Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-metal-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-metal-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Golden, Silver &amp; Full Black  Double Bar Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;golden-silver-full-black-double-bar-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/golden-silver-full-black-double-bar-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Mj Design Black &amp; Grey Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-mj-design-black-grey-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-mj-design-black-grey-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Rimless Rectangle Golden, Silver, Brown And Full Black Metal Frame Sunglasses For Men And Women&quot;,&quot;slug&quot;:&quot;rimless-rectangle-golden-silver-brown-and-full-black-metal-frame-sunglasses-for-men-and-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/rimless-rectangle-golden-silver-brown-and-full-black-metal-frame-sunglasses-for-men-and-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Oversized Off White &amp; Brown Square Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-oversized-off-white-brown-square-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-oversized-off-white-brown-square-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Blue Ray Cut 85051 Black &amp; Grey TR Frame Square Design Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;zoo-shades-blue-ray-cut-85051-black-grey-tr-frame-square-design-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-blue-ray-cut-85051-black-grey-tr-frame-square-design-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut TR Black Frame Square Glass For  Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-tr-black-frame-square-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-tr-black-frame-square-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Cat Eye Black, Peach, Animal Print &amp; Green Frame Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-cat-eye-black-peach-animal-print-green-frame-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-cat-eye-black-peach-animal-print-green-frame-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Blue Ray Cut Double Bar Black &amp; Silver Metal Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;zoo-shades-blue-ray-cut-double-bar-black-silver-metal-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-blue-ray-cut-double-bar-black-silver-metal-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Cat Eye Design Black, Pink &amp; Off White Frame Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-cat-eye-design-black-pink-off-white-frame-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-cat-eye-design-black-pink-off-white-frame-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades 3 in 1 Blue Ray Cut, Night Vision &amp; Sunglasses Magnet Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;zoo-shades-3-in-1-blue-ray-cut-night-vision-sunglasses-magnet-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-3-in-1-blue-ray-cut-night-vision-sunglasses-magnet-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Light Wight Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-light-wight-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-light-wight-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black &amp; Grey Frame Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-grey-frame-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-grey-frame-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Square Matt Black Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-square-matt-black-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-square-matt-black-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Squre Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-squre-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-squre-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Double Bar Square Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-double-bar-square-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-double-bar-square-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Folding Sky Blue Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-folding-sky-blue-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-folding-sky-blue-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized PIT BOOS Sporty Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-pit-boos-sporty-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-pit-boos-sporty-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Best Quality Half Rim Black Shaded, Brown &amp; Pink Sunglasses For Women&quot;,&quot;slug&quot;:&quot;best-quality-half-rim-black-shaded-brown-pink-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/best-quality-half-rim-black-shaded-brown-pink-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized Double Bar Matt Black Square Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-double-bar-matt-black-square-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-double-bar-matt-black-square-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Black &amp; Grey TR Frame 83092 Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-black-grey-tr-frame-83092-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-black-grey-tr-frame-83092-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Blue Ray Cut Round Black Golden TR Frame Glass For Men &amp; Women&quot;,&quot;slug&quot;:&quot;blue-ray-cut-round-black-golden-tr-frame-glass-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/blue-ray-cut-round-black-golden-tr-frame-glass-for-men-women&quot;},{&quot;product_name&quot;:&quot;Sporty Polarized Black Colour light Wight Sunglasses For Men&quot;,&quot;slug&quot;:&quot;sporty-polarized-black-colour-light-wight-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/sporty-polarized-black-colour-light-wight-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Square Design Matt Black Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-square-design-matt-black-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-square-design-matt-black-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;5 in 1 Sunglasses Storage Box&quot;,&quot;slug&quot;:&quot;5-in-1-sunglasses-storage-box&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/5-in-1-sunglasses-storage-box&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Black Square Design Sunglasses For Women &amp; Men&quot;,&quot;slug&quot;:&quot;zoo-shades-black-square-design-sunglasses-for-women-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-black-square-design-sunglasses-for-women-men&quot;},{&quot;product_name&quot;:&quot;High Quality Square Sunglasses Brown &amp; Black Shaded For Women&quot;,&quot;slug&quot;:&quot;high-quality-square-sunglasses-brown-black-shaded-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/high-quality-square-sunglasses-brown-black-shaded-for-women&quot;},{&quot;product_name&quot;:&quot;High Quality Square Sunglasses Brown &amp; Black Shaded For Women&quot;,&quot;slug&quot;:&quot;high-quality-square-sunglasses-brown-black-shaded-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/high-quality-square-sunglasses-brown-black-shaded-for-women&quot;},{&quot;product_name&quot;:&quot;High Quality Square Design Brown &amp; Black Shaded Sunglasses For Women&quot;,&quot;slug&quot;:&quot;high-quality-square-design-brown-black-shaded-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/high-quality-square-design-brown-black-shaded-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Cat Eye Polarized Black Frame Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;cat-eye-polarized-black-frame-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-polarized-black-frame-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Oversized Square Black Metal Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;oversized-square-black-metal-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/oversized-square-black-metal-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Best Quality P2403 Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-best-quality-p2403-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-best-quality-p2403-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Cat Eye Best Quality Pink &amp; Black Frame Sunglasses For Women&quot;,&quot;slug&quot;:&quot;cat-eye-best-quality-pink-black-frame-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/cat-eye-best-quality-pink-black-frame-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Pink, Black Shaded &amp; Brown Square Design Best Quality Sunglasses For Women&quot;,&quot;slug&quot;:&quot;pink-black-shaded-brown-square-design-best-quality-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/pink-black-shaded-brown-square-design-best-quality-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Rectangle Best Quality Black &amp; Brown Best Selling Sunglasses For Men &amp; Women&quot;,&quot;slug&quot;:&quot;rectangle-best-quality-black-brown-best-selling-sunglasses-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/rectangle-best-quality-black-brown-best-selling-sunglasses-for-men-women&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Design Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-design-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-design-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized, Changeable, Night Vision &amp; Blue Ray Cut Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-changeable-night-vision-blue-ray-cut-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-changeable-night-vision-blue-ray-cut-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Hand Made Best Quality Black Wayfarer Design Sunglasses For Men&quot;,&quot;slug&quot;:&quot;hand-made-best-quality-black-wayfarer-design-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/hand-made-best-quality-black-wayfarer-design-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Polarized Matt Black Square Design Sunglasses For Men&quot;,&quot;slug&quot;:&quot;polarized-matt-black-square-design-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/polarized-matt-black-square-design-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;Sporty Polarized Best Selling Model Red, Black &amp; Sky Blue Colour Sunglasses For Men &amp; Women&quot;,&quot;slug&quot;:&quot;sporty-polarized-best-selling-model-red-black-sky-blue-colour-sunglasses-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/sporty-polarized-best-selling-model-red-black-sky-blue-colour-sunglasses-for-men-women&quot;},{&quot;product_name&quot;:&quot;Sporty New Design Red Black &amp; Sky Blue Colour Sunglasses For Men &amp; Women&quot;,&quot;slug&quot;:&quot;sporty-new-design-red-black-sky-blue-colour-sunglasses-for-men-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/sporty-new-design-red-black-sky-blue-colour-sunglasses-for-men-women&quot;},{&quot;product_name&quot;:&quot;GUCCI High Quality Brown, Black &amp; Black Shaded Square Design Sunglasses For Women&quot;,&quot;slug&quot;:&quot;gucci-high-quality-brown-black-black-shaded-square-design-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/gucci-high-quality-brown-black-black-shaded-square-design-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;GUCCI Cat Eye High Quality Pink, Brown &amp; Black Shaded Sunglasses For Women&quot;,&quot;slug&quot;:&quot;gucci-cat-eye-high-quality-pink-brown-black-shaded-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/gucci-cat-eye-high-quality-pink-brown-black-shaded-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;LV Square High Quality  Pink, Brown &amp; Black Shaded Sunglasses For Women&quot;,&quot;slug&quot;:&quot;lv-square-high-quality-pink-brown-black-shaded-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/lv-square-high-quality-pink-brown-black-shaded-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;Shopping bag&quot;,&quot;slug&quot;:&quot;shopping-bag&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/shopping-bag&quot;},{&quot;product_name&quot;:&quot;PRADA High Quality Matt Black &amp; Transparent Frame Sunglasses For Men&quot;,&quot;slug&quot;:&quot;prada-high-quality-matt-black-transparent-frame-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/prada-high-quality-matt-black-transparent-frame-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;ZOO Shades Black &amp; Brown Square Side White Frame 9046 MB Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-black-brown-square-side-white-frame-9046-mb-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-black-brown-square-side-white-frame-9046-mb-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;ZOO Shades D New Square Design Black And Brown 9082 MB Sunglasses For Women&quot;,&quot;slug&quot;:&quot;zoo-shades-d-new-square-design-black-and-brown-9082-mb-sunglasses-for-women&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/zoo-shades-d-new-square-design-black-and-brown-9082-mb-sunglasses-for-women&quot;},{&quot;product_name&quot;:&quot;High Quality Square Design Animal Print, Black &amp; Brown Sunglasses For Men&quot;,&quot;slug&quot;:&quot;high-quality-square-design-animal-print-black-brown-sunglasses-for-men&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/high-quality-square-design-animal-print-black-brown-sunglasses-for-men&quot;},{&quot;product_name&quot;:&quot;test&quot;,&quot;slug&quot;:&quot;test&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/test&quot;},{&quot;product_name&quot;:&quot;test&quot;,&quot;slug&quot;:&quot;test&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/test&quot;},{&quot;product_name&quot;:&quot;test&quot;,&quot;slug&quot;:&quot;test&quot;,&quot;product_link&quot;:&quot;https:\/\/ecom1.webskart.net\/product\/test&quot;}]">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-6 order-lg-3 order-2" style="
+    align-items: center;
+    display: flex;
+    justify-content: end;
+">
+
+                        <div class="header_top">
+                            <div class="header_social-icon">
+                                <ul class="d-flex justify-content-end">
+                                    <li>
+                                        <a href=""><i class="fa fa-facebook"
+                                                aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href=" "><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href=" "><i class="fa fa-instagram" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"
+                                                aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+
+
+            <div class="row menuMobileHide" style="
+    justify-content: end;
+    align-items: center;
+">
+
+
+
+
+                <div class="col-lg-3 col-12">
+                    <li class="category_list" id="sliderCategoryTitle">
+                        <img class="categoryIcons" src="https://cdn-icons-png.flaticon.com/512/561/561184.png"
+                            class="img-fluid" />
+                        <a href="" class="categoriyTitle">Shop by Categories</a><img
+                            src="https://ecom1.webskart.net/public/frontend/img/arrow-down.png" class="img-fluid"
+                            alt="" />
+                    </li>
+                    <ul class="bg-white border_one" id="slider">
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Beauty &amp; Health
+                            </a>
+                            <ul class="sub_menu_list">
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Electronics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Health Care
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Beauty &amp; Health
+                            </a>
+                            <ul class="sub_menu_list">
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Electronics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Health Care
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Beauty &amp; Health
+                            </a>
+                            <ul class="sub_menu_list">
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Electronics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Health Care
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Beauty &amp; Health
+                            </a>
+                            <ul class="sub_menu_list">
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Electronics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Health Care
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Beauty &amp; Health
+                            </a>
+                            <ul class="sub_menu_list">
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Electronics
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span>
+                                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </span>
+                                        Health Care
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Kitchen &amp; Appliances
+                            </a>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Storage &amp; Organization
+                            </a>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Sports &amp; Outdoors
+                            </a>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Toys
+                            </a>
+                        </li>
+                        <li class="px-3 product_icon position-relative d-block">
+                            <a href="" class="sub_icon">
+                                <span class="pr-2"></span> Food &amp; Grocery
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="col-lg-9 d-flex" style="
+    justify-content: end;
+    align-items: center;
+">
+                    <ul class="navUl">
+                        <li>
+                            <a href="">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="">Beauty &amp; Health</a>
+                            <ul class="dropdown-content">
+                                <li><a
+                                        href="">Electronics</a>
+                                </li>
+                                <li><a href="">Health
+                                        Care</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="">Kitchen &amp;
+                                Appliances</a>
+                        </li>
+
+                        <li>
+                            <a href="">Blog</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+
+                    <div class="user-drop position-relative">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/User.png" class="img-fluid" alt="" />
+
+                        <ul class="user-dropdown">
+                            <li><a href=""> Login </a> </li>
+                            <li><a href=""> Sign Up </a> </li>
+                        </ul>
+                    </div>
+                    <div class="cartBlock ml-3 d-lg-block d-none">
+                        <a href="">
+                            <img src="https://ecom1.webskart.net/public/frontend/img/cart.png" class="img-fluid"
+                                alt="" />
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <!--  BANNER SLIDER  -->
+    <div class="banner">
+        <div class=" fullwidth">
+            <ul class="bannerSlider">
+                <!--  1. slide  -->
+                <li class="slide">
+                    <div class="container">
+                        <div class="slide__text">
+                            <div class="slider_block--headings">
+                                <div class="mb-lg-4 mb-0">
+                                    <div class="mb-md-2 mb-1">
+                                        <h2>.</h2>
+                                    </div>
+                                    <div class="py-2">
+                                        <p></p>
+                                    </div>
+                                    <div class="my-lg-3 my-1">
+                                        <h1></h1>
+                                    </div>
+                                    <div class="btn_wrapp">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="slide__image">
+                        <img src="https://framezhouse.com/wp-content/uploads/2024/08/Product-Photography-Its-Impact-on-E-commerce-Growth.jpg"
+                            alt="" />
+                    </div>
+                </li>
+                <li class="slide">
+                    <div class="container">
+                        <div class="slide__text">
+                            <div class="slider_block--headings">
+                                <div class="mb-lg-4 mb-0">
+                                    <div class="mb-md-2 mb-1">
+                                        <h2>.</h2>
+                                    </div>
+                                    <div class="py-2">
+                                        <p></p>
+                                    </div>
+                                    <div class="my-lg-3 my-1">
+                                        <h1></h1>
+                                    </div>
+                                    <div class="btn_wrapp">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="slide__image">
+                        <img src="https://ecom1.webskart.net/public/uploads/banners/Mh5cTBJCcz5B3kKH7IfW.jpg" alt="" />
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- product category -->
+    <section class="flash_sale category  paddingCustom bgGrayListh">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+
+                    <div class="d-flex flex-md-row flex-column justify-content-between align-items-center">
+                        <div class="flash_title ">
+                            <h1 id="">Shop by category </h1>
+                        </div>
+                        <div class="viewAllBtn">
+                            <a href="">Shop all categories</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="custom" />
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/IftXRwRHjizWFpuLkWnu.jpeg"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Beauty &amp; Health</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/W6CPqgTy1YzsfqkqUxHg.png"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Kitchen &amp; Appliances</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/PgiYzediYRQRUoEsu8Ui.png"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Storage &amp; Organization</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/GPqaBhVRW1JdwJAj4sL0.jpg"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Sports &amp; Outdoors</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/lGzpge6FHjwKVYaPnPcm.jpg"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Toys</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-2 col-6">
+                    <a href="" class="category_list_block mr-3">
+                        <div>
+                            <div class="" id="categoryList">
+                                <div class="product_img">
+                                    <img class="category-img"
+                                        src="https://ecom1.webskart.net/public/uploads/category/icons/qzDvE8ovatbQno0yO9xU.jpg"
+                                        class="" alt="" />
+                                    <div class="product_text text-center mx-auto">
+                                        <p>Food &amp; Grocery</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="flash_sale ">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="flash_title d-flex align-items-center">
+                        <h1> Flash Sale</h1>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="countdown-container">
+                <div class="countdown-box">
+                    <div id="days" class="countdown-value">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="hours" class="countdown-value">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="minutes" class="countdown-value">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-box">
+                    <div id="seconds" class="countdown-value">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>  
+                </div>
+                <hr class="custom" />
+            </div>
+            <div class="row">
+                <div class="flas_item col-lg-3">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/k/u/2/xxl-tie-dye-001-fabunna-cotton-original-imagzwfb5v6mjupy.jpeg?q=70" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p></p>
+                            <h4>Women Viscose Rayon</h4>
+                            <h2> <span class="rs"> Rs. </span> 750 <s>Rs. 764</s>
+                            </h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p> </p>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item col-lg-3">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/q/i/4/s-bitcoin-kurta-set-anjiki-original-imah8scajy7dx7kz.jpeg?q=70" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p></p>
+                            <h4>Women Viscose Rayon</h4>
+                            <h2> <span class="rs"> Rs. </span> 750 <s>Rs. 764</s>
+                            </h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p> </p>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item col-lg-3">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/j/1/l/3xl-embro001-tibra-attire-original-imah7wdveefgqzfg.jpeg?q=70" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p></p>
+                            <h4>Printed Anarkali Kurta, </h4>
+                            <h2> <span class="rs"> Rs. </span> 780 <s>Rs. 799</s>
+                            </h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p> </p>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item col-lg-3">
+                    <a href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/ethnic-set/k/o/d/s-kff00406-kelvin-green-munga-fashion-original-imah7szyfpdgzkqk.jpeg?q=70"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p></p>
+                            <h4>Printed Anarkali Kurta, </h4>
+                            <h2> <span class="rs"> Rs. </span> 600 <s>Rs. 1,119</s>
+                            </h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p> </p>
+
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- best selling start  -->
+    <section class="best_selling " id="newSell">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+
+                    <div class="d-flex flex-md-row flex-column justify-content-between align-items-center">
+                        <div class="flash_title ">
+                            <h1 id="">New Arrivals </h1>
+                        </div>
+                        <div class="viewAllBtn">
+                            <a href="">View All</a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="custom">
+            </div>
+            <!--<div class="row">-->
+            <!--    <div class="col-lg-5 d-flex justify-content-between">-->
+            <!--        <div class="flash_title d-flex align-items-center">-->
+            <!--            <h1>New Arrivals</h1>-->
+            <!--        </div>-->
+            <!--    </div>-->
+            <!--    <hr class="custom" />-->
+            <!--</div>-->
+            <div class="newArrival">
+                <div class="flas_item">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/420/420/xif0q/rucksack/l/d/q/80-litres-curve-water-resistant-rucksack-for-hiking-trekking-and-original-imah8kx4w6fatpqg.jpeg?q=60"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="best_selling-content flas_content  mt-3">
+                            <h3> Glass For Men</h3>
+                            <h5 style="color:#f26e21; font-weight:800"><span class="rs"> Rs. </span> 916</h5>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/backpack/k/v/2/9-hummer-unisex-bag-with-rain-cover-office-school-college-original-imah238s3bxcdagh.jpeg?q=70" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="best_selling-content flas_content  mt-3">
+                            <h3>Polarized Sporty Cycling Matlrxs Best Quality 128 Sunglasses For Men</h3>
+                            <h5 style="color:#f26e21; font-weight:800"><span class="rs"> Rs. </span> 1,099</h5>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/t/g/f/9-100-corsac-red-original-imagzx8v3hzh9tjr.jpeg?q=70" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="best_selling-content flas_content  mt-3">
+                            <h3> For
+                                Men</h3>
+                            <h5 style="color:#f26e21; font-weight:800"><span class="rs"> Rs. </span> 1,199</h5>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flas_item">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/v/w/r/10-snk-eva-864-gry-10-bruton-grey-original-imah4ykkjwm7rjrg.jpeg?q=70"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="best_selling-content flas_content  mt-3">
+                            <h3>ZOO Shades Wooden Frame Square Black Best Quality Sunglasses For Men</h3>
+                            <h5 style="color:#f26e21; font-weight:800"><span class="rs"> Rs. </span> 1,221</h5>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                 <div class="flas_item">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/shoe/r/m/s/7-mrj1811-7-aadi-black-white-original-imaha89ngkawpjft.jpeg?q=70"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="best_selling-content flas_content  mt-3">
+                            <h3>ZOO Shades Wooden Frame Square Black Best Quality Sunglasses For Men</h3>
+                            <h5 style="color:#f26e21; font-weight:800"><span class="rs"> Rs. </span> 1,221</h5>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+               
+             
+            </div>
+        </div>
+    </section>
+    <!-- three banner start  -->
+    <section class="three_banner d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-lg-0 mb-4">
+                    <a href="">
+                        <div class="three_banner-img">
+                            <img src="https://ecom1.webskart.net/public/uploads/placeholders/ailKwgEH9S6OTUdNRp4e.png"
+                                class="img-fluid w-100" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 mb-lg-0 mb-4">
+                    <a href="">
+                        <div class="three_banner-img">
+                            <img src="https://ecom1.webskart.net/public/uploads/placeholders/MQlO9kQMaiwzOJA13hRe.png"
+                                class="img-fluid w-100" alt="" />
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 mb-lg-0">
+                    <a href="">
+                        <div class="three_banner-img">
+                            <img src="https://ecom1.webskart.net/public/uploads/placeholders/UY0uZB9go4BbG6LLNbll.png"
+                                class="img-fluid w-100" alt="" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="our_special_sunglasses d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 d-flex justify-content-between">
+                    <div class="flash_title d-flex align-items-center">
+                        <h1>High Quality Sunglasses</h1>
+                    </div>
+                </div>
+                <hr class="custom" />
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/The Gathered Drape Trench_32781.png"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Sports &amp; Outdoors</p>
+                            <h4>The Gathered Drape Trench</h4>
+                            <h2><span class="rs"> Rs. </span> 1,221 <s>Rs. 1,500</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/24037.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Toys</p>
+                            <h4>ZOO Shades Cat Eye Black Frame Best Quality 308A Sunglasses For Women</h4>
+                            <h2><span class="rs"> Rs. </span> 764 <s>Rs. 1,000</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/70917.jpg" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Food &amp; Grocery</p>
+                            <h4>ZOO Shades Golden Metal Frame Round Black 1915 Sunglasses For Men</h4>
+                            <h2><span class="rs"> Rs. </span> 750 <s>Rs. 1,000</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/94230.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Food &amp; Grocery</p>
+                            <h4>ZOO Shades MC Stan Rectangle Matt Black Sunglasses For Men</h4>
+                            <h2><span class="rs"> Rs. </span> 764 <s>Rs. 1,200</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/60531.jpg" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Toys</p>
+                            <h4>Cat Eye Animal Print Brown Best Quality 2A Sunglasses For Women</h4>
+                            <h2><span class="rs"> Rs. </span> 1,426 <s>Rs. 1,700</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/71092.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Sports &amp; Outdoors</p>
+                            <h4>Polarized Matt Black Best Quality And Best Selling Trending Sunglasses For Men</h4>
+                            <h2><span class="rs"> Rs. </span> 1,099 <s>Rs. 1,250</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/77954.jpg" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Food &amp; Grocery</p>
+                            <h4>DV Matt Black Animal Print Best Quality 2A Sunglasses For Men</h4>
+                            <h2><span class="rs"> Rs. </span> 1,426 <s>Rs. 1,700</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/65970.jpg" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p>Toys</p>
+                            <h4>ZOO Shades Square Black Best Quality 2247 Sunglasses For Women</h4>
+                            <h2><span class="rs"> Rs. </span> 866 <s>Rs. 1,000</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr class="custom w-100 mt-5" />
+        </div>
+    </section>
+    <div class="container">
+        <img style="
+    border-radius: 10px;
+" src="https://hamrobazaar.blr1.digitaloceanspaces.com/Advertisements/2025-05/1160X120px%20(2).jpg" class="img-fluid w-100" alt="">
+
+    </div>
+    <section class="our_special_sunglasses bgGrayListh trendingProduct">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 d-flex justify-content-between">
+                    <div class="flash_title d-flex align-items-center">
+                        <h1>Trending</h1>
+                    </div>
+                </div>
+                <hr class="custom" />
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="borderTrendingProduct"
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/The Gathered Drape Trench_32781.png"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p class="categoryName">Sports &amp; Outdoors</p>
+                            <h4 class="shallH4">The Gathered Drape Trench</h4>
+                            <h2><span class="rs"> Rs. </span> 1,221 <s>Rs. 1,500</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="borderTrendingProduct"
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/25032.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p class="categoryName">Sports &amp; Outdoors</p>
+                            <h4 class="shallH4">Polarized Full Black Best Selling Sunglasses 123 Sunglasses For Women
+                                And Men</h4>
+                            <h2><span class="rs"> Rs. </span> 1,119 <s>Rs. 1,200</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="borderTrendingProduct"
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/Polarized Matt Black And White Frame Best Selling 117 Sunglasses For Men_31175.jpg"
+                                class="img-fluid" alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p class="categoryName">Sports &amp; Outdoors</p>
+                            <h4 class="shallH4">Polarized Matt Black And White Frame Best Selling 117 Sunglasses For Men
+                            </h4>
+                            <h2><span class="rs"> Rs. </span> 1,119 <s>Rs. 1,300</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="borderTrendingProduct"
+                        href="">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/52369.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p class="categoryName">Beauty &amp; Health</p>
+                            <h4 class="shallH4">Blue Ray Cut Black &amp; Grey Frame Glass For Men &amp; Women</h4>
+                            <h2><span class="rs"> Rs. </span> 814 <s>Rs. 1,200</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <a class="borderTrendingProduct"
+                        href="/half-rim-brown-metal-3006a-prescription-eyeglasses-frame-for-women-and-men">
+                        <div class="flas_img">
+                            <img src="https://ecom1.webskart.net/public/uploads/products/296.JPG" class="img-fluid"
+                                alt="" />
+                        </div>
+                        <div class="flas_content">
+                            <p class="categoryName">Beauty &amp; Health</p>
+                            <h4 class="shallH4">Half Rim Brown Metal 3006A Prescription Eyeglasses Frame For Women And
+                                Men</h4>
+                            <h2><span class="rs"> Rs. </span> 1,017 <s>Rs. 1,200</s></h2>
+                        </div>
+                        <div class="rating-group rating-index">
+
+
+
+
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+                            <label aria-label="star" class="rating__label" for=""><i
+                                    class="rating__icon rating__icon--star fa fa-star-o"></i></label>
+
+                            <p></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="full_banner-home paddingCustom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="full_banner-img">
+                        <a href=""><img src="https://ecom1.webskart.net/public/uploads/banners/Mh5cTBJCcz5B3kKH7IfW.jpg"
+                                class="img-fluid" alt="" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!--<section class="delivery">-->
+    <!--    <div class="container">-->
+    <!--        <div class="grid-container">-->
+    <!--            <div class="delivery_item d-flex flex-md-row flex-column">-->
+    <!--                <div class="delivery_img">-->
+    <!--                    <img src="https://ecom1.webskart.net/public/frontend/img/free_delivery.png" alt="" />-->
+    <!--                </div>-->
+    <!--                <div class="free_delivery-content ml-md-3 ml-0">-->
+    <!--                    <h2>Free delivery</h2>-->
+    <!--                    <p>Velit ullamco elit et aliqua magna</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="delivery_item d-flex flex-md-row flex-column">-->
+    <!--                <div class="delivery_img">-->
+    <!--                    <img src="https://ecom1.webskart.net/public/frontend/img/suport.png" alt="" />-->
+    <!--                </div>-->
+    <!--                <div class="free_delivery-content ml-md-3 ml-0">-->
+    <!--                    <h2>Support 24/7</h2>-->
+    <!--                    <p>Velit ullamco elit et aliqua magna</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="delivery_item d-flex flex-md-row flex-column">-->
+    <!--                <div class="delivery_img">-->
+    <!--                    <img src="https://ecom1.webskart.net/public/frontend/img/payment.png" alt="" />-->
+    <!--                </div>-->
+    <!--                <div class="free_delivery-content ml-md-3 ml-0">-->
+    <!--                    <h2>Payment</h2>-->
+    <!--                    <p>Velit ullamco elit et aliqua magna</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="delivery_item d-flex flex-md-row flex-column">-->
+    <!--                <div class="delivery_img">-->
+    <!--                    <img src="https://ecom1.webskart.net/public/frontend/img/reliable.png" alt="" />-->
+    <!--                </div>-->
+    <!--                <div class="free_delivery-content ml-md-3 ml-0">-->
+    <!--                    <h2>Reliable</h2>-->
+    <!--                    <p>Velit ullamco elit et aliqua magna</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="delivery_item d-flex flex-md-row flex-column">-->
+    <!--                <div class="delivery_img">-->
+    <!--                    <img src="https://ecom1.webskart.net/public/frontend/img/guarantee.png" alt="" />-->
+    <!--                </div>-->
+    <!--                <div class="free_delivery-content ml-md-3 ml-0">-->
+    <!--                    <h2>Guarantee</h2>-->
+    <!--                    <p>Velit ullamco elit et aliqua magna</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+    <!--<section class="home_page-content">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row">-->
+    <!--            <div class="col-md-11">-->
+    <!--                <div class="home_page-text">-->
+    <!--                    <p>-->
+    <!--                        VR, however, is a more easily reachable goal in the short term.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        Apple has been in the wings all this time without any headset at-->
+    <!--                        all, although the company's aspirations in AR have been clear-->
+    <!--                        and well-telegraphed on iPhones and iPads for years. Each year,-->
+    <!--                        Apple's made significant strides on iOS with its AR tools. It's-->
+    <!--                        been debated how soon this hardware will emerge: this year, the-->
+    <!--                        year after or even further down the road. Or whether Apple-->
+    <!--                        proceeds with just glasses, or with a mixed-reality VR/AR-->
+    <!--                        headset, too.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        I've worn more AR and VR headsets than I can even recall, and-->
+    <!--                        been tracking the whole landscape for years. In a lot of ways, a-->
+    <!--                        future Apple AR headset's logical flight path should be clear-->
+    <!--                        from just studying the pieces already laid out. Apple acquired-->
+    <!--                        VR media-streaming company NextVR in 2020, and previously-->
+    <!--                        purchased AR headset lens-maker Akonia Holographics in 2018.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        I've had my own thoughts on what the long-rumored headset might-->
+    <!--                        be, and so far, the reports feel well-aligned to be just that.-->
+    <!--                        Much like the Apple Watch, which emerged among many other-->
+    <!--                        smartwatches and had a lot of features I'd seen in other forms-->
+    <!--                        before, Apple's glasses will probably not be a massive surprise-->
+    <!--                        if you've been following the beats of the AR/VR landscape-->
+    <!--                        lately.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        Remember Google Glass? How about Snapchat's Spectacles? Or the-->
+    <!--                        HoloLens or Magic Leap? Meta is working on AR glasses too, and-->
+    <!--                        Snap... and also Niantic. The landscape could get crowded fast.-->
+    <!--                    </p>-->
+    <!--                    <p>-->
+    <!--                        Here's where Apple is likely to go based on what's been-->
+    <!--                        reported, and how the company could avoid the pitfalls of those-->
+    <!--                        earlier platforms.-->
+    <!--                    </p>-->
+    <!--                    <p>Apple declined to comment on this story.</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
+
+    <!-- Header Section -->
+
+
+
+    <a id="button"></a>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-cta pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="cta-text">
+                                <h4>Find us</h4>
+                                <span>1010 Avenue, sw 54321, chandigarh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="fas fa-phone"></i>
+                            <div class="cta-text">
+                                <h4>Call us</h4>
+                                <span>9876543210 0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-4 mb-30">
+                        <div class="single-cta">
+                            <i class="far fa-envelope-open"></i>
+                            <div class="cta-text">
+                                <h4>Mail us</h4>
+                                <span>mail@info.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-content pt-5 pb-5">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 mb-50">
+                        <div class="footer-widget">
+                           <div class="footer-logo">
+                                <a href=""><img src="https://ecom1.webskart.net/public/frontend/img/Zoo.png" class="img-fluid" alt="logo" style="
+    filter: brightness(0) invert(1);
+"></a>
+                            </div>
+                            <div class="footer-text">
+                                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
+                                elit,Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="footer-social-icon">
+                                <span>Follow us</span>
+                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Useful Links</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">about</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Expert Team</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
+                        <div class="footer-widget">
+                            <div class="footer-widget-heading">
+                                <h3>Subscribe</h3>
+                            </div>
+                            <div class="footer-text mb-25">
+                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                            </div>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <input type="text" placeholder="Email Address">
+                                    <button><i class="fab fa-telegram-plane"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2025, All Right Reserved <a href="">Ecommerce</a></p>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Policy</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- mobile menu start  -->
+    <div class="side-bar">
+        <header>
+            <div class="close-btn">
+                <i class="fa fa-times"></i>
+            </div>
+        </header>
+        <div class="menu_mobile pt-3">
+            <div class="item">
+                <a class="d-flex justify-conten-between" href="">Beauty
+                    &amp; Health
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a class="d-flex justify-conten-between"
+                    href="">Kitchen &amp; Appliances
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a class="d-flex justify-conten-between"
+                    href="">Storage &amp; Organization
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a class="d-flex justify-conten-between"
+                    href="">Sports &amp; Outdoors
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a class="d-flex justify-conten-between" href="">Toys
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a class="d-flex justify-conten-between" href="">Food
+                    &amp; Grocery
+                    <div class="category_left-icon">
+                        <img src="https://ecom1.webskart.net/public/frontend/img/arrow_right.png" alt="" />
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="item">
+                <a href="" class=""><img
+                        src="https://ecom1.webskart.net/public/frontend/img/User.png" class="img-fluid"
+                        alt="" />Login</a>
+            </div>
+            <div class="item">
+                <a href="" class=""><img
+                        src="https://ecom1.webskart.net/public/frontend/img/User.png" class="img-fluid" alt="" />Sign
+                    Up</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu end  -->
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/jquery.exzoom.js"></script>
+
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="https://ecom1.webskart.net/public/frontend/js/popper.min.js"></script>
+    <script type="text/javascript" src="https://ecom1.webskart.net/public/frontend/js/bootstrap.min.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/slick.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/slick-animation.min.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/wow.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/font-awesom.js"></script>
+    <script src="https://ecom1.webskart.net/public/frontend/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"> </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('#exzoom').exzoom({
+                "navWidth": 60,
+                "navHeight": 60,
+                "navItemNum": 3,
+                "navItemMargin": 10,
+                "navBorder": 1,
+                "autoPlay": false,
+                "autoPlayTimeout": 2000
+            })
+        })
+    </script>
+
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var token = "kimPTmu7A4vKw2sg8AEcmmFLJeLFJjmK0qV42cYY";
+
+        var baseUrl = "https://ecom1.webskart.net";
+
+    </script>
+
+    <script>
+
+
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Toggle filter group visibility when the filter button is clicked
+            $('#filterButton').click(function () {
+                $('#filterGroup').slideToggle();
+            });
+        });
+    </script>
+
+    <script>
+        function previewImages(event) {
+            const previewContainer = document.getElementById("imagePreview");
+            previewContainer.innerHTML = '';
+
+            const files = event.target.files;
+
+            for (const file of files) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const image = new Image();
+                    image.src = e.target.result;
+
+                    image.classList.add('preview-image');
+                    previewContainer.appendChild(image);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+    </script>
+
+    <script>
+
+        // Optional JavaScript for better hover handling
+        document.addEventListener('DOMContentLoaded', function () {
+            const categoryList = document.getElementById('sliderCategoryTitle');
+            const slider = document.getElementById('slider');
+
+            // Show dropdown on hover
+            categoryList.addEventListener('mouseenter', function () {
+                slider.style.display = 'block';
+            });
+
+            // Keep dropdown visible when hovering over dropdown content
+            slider.addEventListener('mouseenter', function () {
+                slider.style.display = 'block';
+            });
+
+            // Hide dropdown when mouse leaves both title and content
+            categoryList.addEventListener('mouseleave', function (e) {
+                if (!e.relatedTarget || !slider.contains(e.relatedTarget)) {
+                    setTimeout(function () {
+                        if (!slider.matches(':hover')) {
+                            slider.style.display = 'none';
+                        }
+                    }, 100);
+                }
+            });
+
+            slider.addEventListener('mouseleave', function () {
+                slider.style.display = 'none';
+            });
+
+            // Make each category show its subcategories on hover
+            const productIcons = document.querySelectorAll('.product_icon');
+            productIcons.forEach(function (icon) {
+                icon.addEventListener('mouseenter', function () {
+                    const subMenu = this.querySelector('.sub_menu_list');
+                    if (subMenu) {
+                        subMenu.style.display = 'block';
+                    }
+                });
+
+                icon.addEventListener('mouseleave', function () {
+                    const subMenu = this.querySelector('.sub_menu_list');
+                    if (subMenu) {
+                        subMenu.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    <script>
+        let timer = document.getElementById('remaining_time').value;
+
+        let timing = timer.split(':');
+        h = timing[0];
+        m = timing[1];
+        s = timing[2];
+        if (s == '00') {
+            s = '59'
+            m = m - 1
+        }
+        if (m == '00') {
+            m = '59'
+            h = h - 1;
+        }
+    </script>
+
+    <script>
+        $('.bannerSlider').slick({
+            dots: false,
+            autoplay: false,
+            arrows: false,
+
+            infinite: true,
+            speed: 2000,
+            //   fade: true,
+            cssEase: 'ease-in-out',
+            pauseOnHover: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+    </script>
+
+    <script>
+        $('.best_selling-slider').slick({
+            dots: false,
+            autoplay: true,
+            arrows: true,
+
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+
+        $(document).ready(function () {
+        });
+    </script>
+
+    <!-- sale time start  -->
+      <script>
+        // Set the date we're counting down to (3 days from now)
+        const currentDate = new Date();
+        const targetDate = new Date();
+        targetDate.setDate(currentDate.getDate() + 3);
+        targetDate.setHours(23, 59, 59, 0);
+        
+        // Update the countdown every 1 second
+        const countdownTimer = setInterval(function() {
+            // Get current date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the countdown date
+            const distance = targetDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("days").innerHTML = days.toString().padStart(2, "0");
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, "0");
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, "0");
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, "0");
+            
+            // If the countdown is finished, display a text
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.querySelector(".countdown-container").innerHTML = "<h2>Sale has ended!</h2>";
+            }
+        }, 1000);
+        
+        // Add animation to the CTA button
+        const ctaButton = document.querySelector(".cta-button");
+        setInterval(() => {
+            ctaButton.classList.add("pulse");
+            setTimeout(() => {
+                ctaButton.classList.remove("pulse");
+            }, 1000);
+        }, 3000);
+    </script>
+</body>
+
+</html>
