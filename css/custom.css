@@ -2254,7 +2254,7 @@ i.fa.fa-arrow-down {
 /* top scroll btn start */
 #button {
   display: inline-block;
-  background-color: #1748a0;
+  background-color: #ff5e15;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -2976,7 +2976,7 @@ img.slide__image__top-position {
 .bannerSlider .slide__image img {
     width: 100%;
     object-fit: cover;
-    height: 60vh;
+    height: 70vh;
     object-position: center;
 }
 
@@ -3005,17 +3005,17 @@ img.slide__image__top-position {
 }
 .banner {
     margin-top: 0;
-    height: 60vh;
+    height: 70vh;
 }
 li.slide {
     /* height: 80vh !important; */
 }
 div#categoryList .product_img img {
     border-radius: 20px;
-    min-height: 150px;
-    max-height: 150px;
-    min-width: 150px;
-    max-width: 150px;
+    min-height: 264px;
+    max-height: 264px;
+    min-width: 100%;
+    max-width: 100%;
     object-fit: cover;
 }
 div#categoryList .product_text {
@@ -3024,8 +3024,8 @@ div#categoryList .product_text {
 
 div#categoryList .product_text p {
     font-family: "Work Sans", Sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 19px;
+    font-weight: 600;
     line-height: 22px;
 }
 .full_banner-img img {
@@ -3066,8 +3066,8 @@ ul.navUl {
 }
 
 ul.navUl li a {
-    color: #000000;
-    font-size: 14px;
+    color: #4d4d4d;
+    font-size: 15px;
     /* margin: 23px; */
     font-weight: 500;
     font-family: Inter, sans-serif;
@@ -3368,7 +3368,7 @@ ul#slider {
         display: block;
         color: white;
         text-decoration: none;
-        padding: 15px 20px;
+        padding: 18px 13px;
     }
     
     .navUl li a:hover {
@@ -3380,7 +3380,7 @@ ul#slider {
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #1748a0;
+        background-color: #4d4d4d;
         /* min-width: 160px; */
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         z-index: 1;
@@ -3480,10 +3480,17 @@ sub.cartItemBlock {
     color:#fff;
 }
 .topMenuSearch {
-    background: #1748a0;
+    background: #f25a25;
 }
 .logo_block img {
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); */
+    height: 139px;
+    position: fixed;
+    top: 0;
+    border-bottom: 3px solid #f25a25;
+    /* transform: scale(1.5); */
+    /* border-bottom-left-radius: 5px; */
+    /* border-bottom-right-radius: 5px; */
 }
 .footer-section {
   background: #151414;
@@ -3935,19 +3942,7 @@ section#newSell .flas_item .flas_img img {
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
 
 }
-.mainn {
-
-    background: #C9D6FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, #426a79, #3e2c75); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
-
-    position: relative;
-    z-index: 3;
-
-}
+.mainn {background: #C9D6FF;  /* fallback for old browsers */background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */background: linear-gradient(to bottom, #4d4d4d, #f25a25); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */position: relative;z-index: 3;/* background: #4d4d4d; */}
 
 
 
@@ -4420,7 +4415,8 @@ h6.gray {
   width: 100%;
   max-height: 190px;
   min-height: 190px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 5px;
   object-position: center;
 }
 .product-grid-item .category-title .title a {
@@ -4677,7 +4673,10 @@ section#productlist .flip-clock-wrapper ul li a div div.inn {
     min-height: 194px;
     max-height: 194px;
     width: 100%;
-    object-fit: fill;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 .special_left h6 {
     font-size: 13px;
@@ -4716,7 +4715,7 @@ div#countdown li {
 
 
 .category {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 div#countdown li {
@@ -5000,5 +4999,9 @@ span.pr-2.category_icon_img img {
     min-width: 21px;
     margin-right: 10px !important;
 }
+.category-title {
+    margin-bottom: 10px;
+}
+
 /*=================================================== BEST SELLING END  */
 /* product css end  */
