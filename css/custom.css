@@ -3737,7 +3737,7 @@ section#newSell .flas_item .flas_img img {
 }
 
 .product .product-body .product-price {
-  color: #3169af;
+  color: #f25a25;
   font-size: 18px;
 }
 
@@ -3763,7 +3763,7 @@ section#newSell .flas_item .flas_img img {
 }
 
 .product .product-body .product-rating>i.fa-star {
-  color: #e58b19;
+  color: #f25a25;
 }
 
 .product .product-body .product-rating:after {
